@@ -3,37 +3,37 @@ from sys import exit
 def what_time(day):
     time = input("When? For lunch, during the afternoon, for dinner or afterwards? ")
 
-    if "lunch" in time and (day == "Sunday" or day == "sunday"):
+    if "lunch" in time and day == "sunday":
         join_us("This is where we will be having lunch on Sunday: ")
-    elif "lunch" in time and (day == "Monday" or day == "monday"):
+    elif "lunch" in time and day == "monday":
         join_us("This is where we will be having lunch on Monday: ")
-    elif "lunch" in time and (day == "Friday" or day == "friday"):
+    elif "lunch" in time and day == "friday":
         join_us("This is where we will be having lunch on Friday: ")
-    elif "lunch" in time and (day == "Thursday" or day == "thursday"):
+    elif "lunch" in time and day == "thursday":
         join_us("This is where we will be having lunch on Thursday: ")
 
-    elif "afternoon" in time and (day == "Sunday" or day == "sunday"):
+    elif "afternoon" in time and day == "sunday":
         join_us("This is where we will be Sunday afternoon: ")
-    elif "afternoon" in time and (day == "Monday" or day == "monday"):
+    elif "afternoon" in time and day == "monday":
         join_us("This is where we will be Monday afternoon: ")
-    elif "afternoon" in time and (day == "Friday" or day == "friday"):
+    elif "afternoon" in time and day == "friday":
         join_us("This is where we will be Friday afternoon: ")
-    elif "afternoon" in time and (day == "Thursday" or day == "thursday"):
+    elif "afternoon" in time and day == "thursday":
         join_us("This is where we will be Thursday afternoon: ")
 
-    elif "dinner" in time and (day == "Sunday" or day == "sunday"):
+    elif "dinner" in time and day == "sunday":
         join_us("This is where we will be having dinner on Sunday: ")
-    elif "dinner" in time and (day == "Monday" or day == "monday"):
+    elif "dinner" in time and day == "monday":
         join_us("This is where we will be having dinner on Monday: ")
-    elif ("dinner" in time or "evening" in time) and (day == "Friday" or day == "friday"):
+    elif ("dinner" in time or "evening" in time) and day == "friday":
         join_us("Please join us for a drink here anytime after 7:30pm: ")
-    elif ("dinner" in time or "evening" in time) and (day == "Thursday" or day == "thursday"):
+    elif ("dinner" in time or "evening" in time) and day == "thursday":
         join_us("Start the festivities with us here: ")
 
 def what_day():
-    day = input("What day would you like to hang out with us? ")
+    day = input("What day would you like to hang out with us? ").lower()
 
-    if day == "sunday" or day == "Sunday" or day == "monday" or day == "Monday" or day == "friday" or day == "Friday" or day == "thursday" or day == "Thursday":
+    if day == "sunday" or day == "monday" or day == "friday" or day == "thursday":
         what_time(day)
     else:
         join_us("Here are our plans for Thursday, Friday, Sunday and Monday: ")
@@ -84,9 +84,9 @@ def bach_parties():
             hang_out()
 
 def arrival():
-    arrival_day = input("What day are you arriving to Budapest? ")
+    arrival_day = input("What day are you arriving to Budapest? ").lower()
 
-    if arrival_day == "Wednesday" or arrival_day == "wednesday":
+    if arrival_day == "wednesday":
         bach_parties()
     else:
         hang_out()
